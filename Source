@@ -1,0 +1,26 @@
+import turtle 
+t = turtle.Turtle()
+
+t.getscreen().bgcolor('black')
+t.color('white')
+t.speed(0)
+t.pensize(2)
+
+t.penup()
+t.goto(-250,70)
+t.pendown()
+
+
+def stars(turtle,size):
+    if size <= 10:
+        return
+    else:
+        t.begin_fill()
+        for i in range(5):
+            t.forward(size)
+            stars(turtle,size/3) # Change the size/3 and see magic
+            t.left(216)
+        t.end_fill()
+
+stars(t,360)
+turtle.Screen().exitonclick(quit)       
